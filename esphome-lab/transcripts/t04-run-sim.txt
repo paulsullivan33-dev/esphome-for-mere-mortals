@@ -1,0 +1,44 @@
+[02:43:28][C][safe_mode:201]: Unsuccessful boot attempts: 0
+[02:43:28][I][app:073]: Running through setup()
+[02:43:28][D][template.switch:043]:   Restored state OFF
+[02:43:28][W][component:290]: api set Warning flag: waiting for client connection
+[02:43:28][I][app:130]: setup() finished successfully!
+[02:43:28][I][app:164]: ESPHome version 2026.10.0 compiled on 2026-10-22 02:42:33 +0000
+[02:43:28][C][logger:218]: Logger:
+  Max Level: DEBUG
+  Initial Level: DEBUG
+[02:43:28][C][logger:232]:   Task Log Buffer Slots: 64
+[02:43:28][C][template.sensor:017]: Template Sensor 'Simulated Greenhouse Temperature'
+  State Class: ''
+  Unit of Measurement: '°C'
+  Accuracy Decimals: 1
+[02:43:28][C][template.sensor:166]:   Device Class: 'temperature'
+[02:43:28][C][template.sensor:340]:   Update Interval: 5.000s
+[02:43:28][C][uptime.sensor:017]: Uptime Sensor 'Simulated Greenhouse Uptime'
+  State Class: 'total_increasing'
+  Unit of Measurement: 's'
+  Accuracy Decimals: 0
+[02:43:28][C][uptime.sensor:166]:   Device Class: 'duration'
+[02:43:28][C][uptime.sensor:157]:   Icon: 'mdi:timer-outline'
+[02:43:28][C][uptime.sensor:019]:   Type: Seconds
+[02:43:28][C][template.binary_sensor:016]: Template Binary Sensor 'Simulated Greenhouse Door'
+[02:43:28][C][template.binary_sensor:166]:   Device Class: 'door'
+[02:43:28][C][template.switch:086]: Template Switch 'Simulated Vent Fan'
+  Restore Mode: always OFF
+[02:43:28][C][template.switch:050]:   Optimistic: YES
+[02:43:28][C][esphome.ota:129]: Over-The-Air updates:
+  Address: greenhouse-sim.local:8082
+  Version: 2
+  Encryption: offered, plaintext accepted
+[02:43:28][C][esphome.ota:153]:   Password configured
+[02:43:28][C][safe_mode:058]: Safe Mode:
+  Successful after: 60s
+  Invoke after: 10 attempts
+  Duration: 300s
+[02:43:28][C][api:368]: Server:
+  Address: greenhouse-sim.local:6053
+  Listen backlog: 4
+  Max connections: 8
+[02:43:28][C][api:375]:   Noise encryption: YES
+[02:43:28][C][mdns:324]: mDNS:
+  Hostname: greenhouse-sim

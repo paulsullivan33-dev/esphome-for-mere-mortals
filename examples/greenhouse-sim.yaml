@@ -1,0 +1,65 @@
+# The Greenhouse, simulated. The same control logic as
+# greenhouse.yaml, but built for ESPHome's "host" platform: the
+# firmware is an ordinary program on this computer, the sensor is
+# a lambda that pretends, and the fan is a template switch.
+# It exists so the logic can be compiled and run with no hardware.
+esphome:
+  name: greenhouse-sim
+  friendly_name: Greenhouse (Simulated)
+
+host:
+
+logger:
+  # DEBUG on the simulator, so you can watch every state change
+  # while you learn. The real node runs INFO (see greenhouse.yaml).
+  level: DEBUG
+
+api:
+  encryption:
+    key: !secret api_key
+
+ota:
+  - platform: esphome
+    password: !secret ota_password
+
+sensor:
+  - platform: template
+    name: "Simulated Greenhouse Temperature"
+    id: air_temp
+    unit_of_measurement: "°C"
+    device_class: temperature
+    accuracy_decimals: 1
+    update_interval: 5s
+    lambda: |-
+      static float t = 24.0f;
+      t += 0.7f;
+      if (t > 33.0f) t = 24.0f;
+      return t;
+  - platform: uptime
+    name: "Simulated Greenhouse Uptime"
+
+binary_sensor:
+  - platform: template
+    name: "Simulated Greenhouse Door"
+    device_class: door
+    lambda: |-
+      return id(air_temp).state > 28.0;
+
+switch:
+  - platform: template
+    name: "Simulated Vent Fan"
+    id: vent_fan
+    optimistic: true
+
+interval:
+  - interval: 5s
+    then:
+      - if:
+          condition:
+            sensor.in_range:
+              id: air_temp
+              above: 30.0
+          then:
+            - switch.turn_on: vent_fan
+          else:
+            - switch.turn_off: vent_fan

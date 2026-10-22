@@ -1,0 +1,69 @@
+INFO ESPHome 2026.10.0
+INFO Loaded validated config cache for greenhouse-sim.yaml, skipping validation.
+INFO Starting log output from 127.0.0.1 using esphome API
+INFO Stacktrace analysis is unavailable: no compatible analyzer found for target platform "host".
+INFO Successfully resolved greenhouse-sim @ 127.0.0.1 in 0.000s
+INFO Successfully connected to greenhouse-sim @ 127.0.0.1 in 0.005s
+INFO Successful handshake with greenhouse-sim @ 127.0.0.1 in 0.479s
+[02:45:47.063][I][app:164]: ESPHome version 2026.10.0 compiled on 2026-10-22 02:42:33 +0000
+[02:45:47.063][C][logger:218]: Logger:
+[02:45:47.063][C][logger:218]:   Max Level: DEBUG
+[02:45:47.063][C][logger:218]:   Initial Level: DEBUG
+[02:45:47.063][C][logger:232]:   Task Log Buffer Slots: 64
+[02:45:47.086][C][template.sensor:017]: Template Sensor 'Simulated Greenhouse Temperature'
+[02:45:47.086][C][template.sensor:017]:   State Class: ''
+[02:45:47.086][C][template.sensor:017]:   Unit of Measurement: '°C'
+[02:45:47.086][C][template.sensor:017]:   Accuracy Decimals: 1
+[02:45:47.092][C][template.sensor:166]:   Device Class: 'temperature'
+[02:45:47.092][C][template.sensor:340]:   Update Interval: 5.000s
+[02:45:47.103][C][uptime.sensor:017]: Uptime Sensor 'Simulated Greenhouse Uptime'
+[02:45:47.103][C][uptime.sensor:017]:   State Class: 'total_increasing'
+[02:45:47.103][C][uptime.sensor:017]:   Unit of Measurement: 's'
+[02:45:47.103][C][uptime.sensor:017]:   Accuracy Decimals: 0
+[02:45:47.105][C][uptime.sensor:166]:   Device Class: 'duration'
+[02:45:47.105][C][uptime.sensor:157]:   Icon: 'mdi:timer-outline'
+[02:45:47.105][C][uptime.sensor:019]:   Type: Seconds
+[02:45:47.145][C][template.binary_sensor:016]: Template Binary Sensor 'Simulated Greenhouse Door'
+[02:45:47.146][C][template.binary_sensor:166]:   Device Class: 'door'
+[02:45:47.146][C][template.switch:086]: Template Switch 'Simulated Vent Fan'
+[02:45:47.146][C][template.switch:086]:   Restore Mode: always OFF
+[02:45:47.146][C][template.switch:050]:   Optimistic: YES
+[02:45:47.186][C][esphome.ota:129]: Over-The-Air updates:
+[02:45:47.186][C][esphome.ota:129]:   Address: greenhouse-sim.local:8082
+[02:45:47.186][C][esphome.ota:129]:   Version: 2
+[02:45:47.186][C][esphome.ota:129]:   Encryption: offered, plaintext accepted
+[02:45:47.200][C][esphome.ota:153]:   Password configured
+[02:45:47.202][C][safe_mode:058]: Safe Mode:
+[02:45:47.202][C][safe_mode:058]:   Successful after: 60s
+[02:45:47.202][C][safe_mode:058]:   Invoke after: 10 attempts
+[02:45:47.202][C][safe_mode:058]:   Duration: 300s
+[02:45:47.219][C][api:368]: Server:
+[02:45:47.219][C][api:368]:   Address: greenhouse-sim.local:6053
+[02:45:47.219][C][api:368]:   Listen backlog: 4
+[02:45:47.219][C][api:368]:   Max connections: 8
+[02:45:47.224][C][api:375]:   Noise encryption: YES
+[02:45:47.238][C][mdns:324]: mDNS:
+[02:45:47.238][C][mdns:324]:   Hostname: greenhouse-sim
+[02:45:47.367][S][sensor]: 'Simulated Greenhouse Temperature' >> 25.4 °C
+[02:45:52.366][S][sensor]: 'Simulated Greenhouse Temperature' >> 26.1 °C
+[02:45:57.371][S][sensor]: 'Simulated Greenhouse Temperature' >> 26.8 °C
+[02:46:02.355][S][sensor]: 'Simulated Greenhouse Temperature' >> 27.5 °C
+[02:46:07.364][S][sensor]: 'Simulated Greenhouse Temperature' >> 28.2 °C
+[02:46:07.364][S][binary_sensor]: 'Simulated Greenhouse Door' >> ON
+[02:46:12.359][S][sensor]: 'Simulated Greenhouse Temperature' >> 28.9 °C
+[02:46:17.355][S][sensor]: 'Simulated Greenhouse Temperature' >> 29.6 °C
+[02:46:22.362][S][sensor]: 'Simulated Greenhouse Temperature' >> 30.3 °C
+[02:46:22.985][S][switch]: 'Simulated Vent Fan' >> ON
+[02:46:27.377][S][sensor]: 'Simulated Greenhouse Temperature' >> 31.0 °C
+[02:46:32.366][S][sensor]: 'Simulated Greenhouse Temperature' >> 31.7 °C
+[02:46:37.374][S][sensor]: 'Simulated Greenhouse Temperature' >> 32.4 °C
+[02:46:41.472][I][safe_mode:154]: Boot seems successful; resetting boot loop counter
+[02:46:42.377][S][sensor]: 'Simulated Greenhouse Temperature' >> 24.0 °C
+[02:46:42.377][S][binary_sensor]: 'Simulated Greenhouse Door' >> OFF
+[02:46:42.667][S][sensor]: 'Simulated Greenhouse Uptime' >> 3436 s
+[02:46:42.989][S][switch]: 'Simulated Vent Fan' >> OFF
+[02:46:47.373][S][sensor]: 'Simulated Greenhouse Temperature' >> 24.7 °C
+[02:46:52.368][S][sensor]: 'Simulated Greenhouse Temperature' >> 25.4 °C
+[02:46:57.363][S][sensor]: 'Simulated Greenhouse Temperature' >> 26.1 °C
+[02:47:02.365][S][sensor]: 'Simulated Greenhouse Temperature' >> 26.8 °C
+[02:47:07.379][S][sensor]: 'Simulated Greenhouse Temperature' >> 27.5 °C

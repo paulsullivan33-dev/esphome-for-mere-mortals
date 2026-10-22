@@ -1,0 +1,67 @@
+The Greenhouse Lab — notes
+==========================
+
+What the lab was: the official ESPHome
+2026.10.0 (pip, in a venv) on a Linux build
+machine with no ESP board attached. Two
+configurations, kept verbatim beside this
+file:
+
+  greenhouse.yaml      the specimen as it
+                       would be flashed to
+                       an ESP32 (esp32dev)
+  greenhouse-sim.yaml  the same logic aimed
+                       at the host platform,
+                       with template parts:
+                       a lambda for weather,
+                       a template switch for
+                       the fan
+
+Commands actually run (transcripts in
+esphome-lab/transcripts/):
+
+  esphome version                            t00
+  esphome config greenhouse.yaml             t01  valid
+  esphome config greenhouse-sim.yaml         t02  valid
+  esphome compile greenhouse-sim.yaml        t03  133 objects, LINK
+  (ran the compiled program)                 t04  boot + dump
+  esphome logs greenhouse-sim.yaml           t05  API session:
+       --device 127.0.0.1                         full fan cycle
+  esphome config broken.yaml                 t06  planted faults,
+                                                    exit 2
+  (device's own log during t05)              t07  client connect,
+                                                    safe-mode counter
+  esphome compile greenhouse.yaml            t08  see criteria.md
+  esphome upload greenhouse-sim.yaml         t09  OTA successful
+       --device 127.0.0.1
+  (device's own log during t09)              t10  OTA begin,
+                                                    989608 bytes
+  esphome config (no secrets.yaml present)   t11  exit 2, the
+                                                    missing file
+                                                    named
+
+Also probed: `esphome dashboard` in this
+version answers that the built-in dashboard
+has been removed in favour of the separate
+ESPHome Device Builder tool; not a
+transcript, but chapter 4 reports it.
+
+The invented household: a backyard
+greenhouse at a fictional cottage. Wi-Fi
+name "Marigold Cottage WiFi"; every
+password in the lab was invented for this
+guide and protects nothing. The lab's
+secrets.yaml is not in this repository;
+secrets.yaml.example shows its shape.
+
+Two observations worth the space:
+
+  * Left alone, the host program printed
+    its boot and fell quiet; its state
+    streamed when a client connected (t05).
+    Judge by the client's view.
+
+  * The twin's uptime sensor reported the
+    computer's uptime, not the program's —
+    thousands of seconds at first reading.
+    Host-platform numbers are the host's.

@@ -1,0 +1,7 @@
+INFO ESPHome 2026.10.0
+INFO Reading configuration broken.yaml...
+INFO Unable to import component bme280.sensor: No module named 'esphome.components.bme280'
+Failed config
+
+Platform not found: 'sensor.bme280'
+

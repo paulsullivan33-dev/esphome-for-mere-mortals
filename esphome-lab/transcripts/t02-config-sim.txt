@@ -1,0 +1,106 @@
+INFO ESPHome 2026.10.0
+INFO Reading configuration greenhouse-sim.yaml...
+WARNING 'ota' password wastes significant flash and RAM; using 'encryption' instead is recommended - see https://esphome.io/components/ota/esphome/#configuration-variables
+esphome:
+  name: greenhouse-sim
+  friendly_name: Greenhouse (Simulated)
+  min_version: 2026.10.0
+  build_path: build/greenhouse-sim
+  platformio_options: {}
+  build_flags: []
+  environment_variables: {}
+  includes: []
+  includes_c: []
+  libraries: []
+  name_add_mac_suffix: false
+  merge_warnings: true
+  debug_scheduler: false
+  suspend_loop: false
+  areas: []
+  devices: []
+host:
+  mac_address: 98:35:69:AB:F6:79
+logger:
+  level: DEBUG
+  baud_rate: 115200
+  tx_buffer_size: 512
+  deassert_rts_dtr: false
+  logs: {}
+  runtime_tag_levels: false
+api:
+  encryption:
+    key: !secret 'api_key'
+  port: 6053
+  reboot_timeout: 15min
+  batch_delay: 100ms
+  custom_services: false
+  homeassistant_services: false
+  homeassistant_states: false
+  listen_backlog: 4
+  max_connections: 8
+  max_send_queue: 16
+ota:
+  - platform: esphome
+    password: !secret 'ota_password'
+    version: 2
+    port: 8082
+    allow_partition_access: false
+sensor:
+  - platform: template
+    name: Simulated Greenhouse Temperature
+    id: air_temp
+    unit_of_measurement: °C
+    device_class: temperature
+    accuracy_decimals: 1
+    update_interval: 5s
+    lambda: !lambda |-
+      static float t = 24.0f;
+      t += 0.7f;
+      if (t > 33.0f) t = 24.0f;
+      return t;
+    disabled_by_default: false
+    force_update: false
+  - platform: uptime
+    name: Simulated Greenhouse Uptime
+    disabled_by_default: false
+    force_update: false
+    unit_of_measurement: s
+    icon: mdi:timer-outline
+    accuracy_decimals: 0
+    device_class: duration
+    state_class: total_increasing
+    entity_category: diagnostic
+    update_interval: 60s
+    type: seconds
+binary_sensor:
+  - platform: template
+    name: Simulated Greenhouse Door
+    device_class: door
+    lambda: !lambda |-
+      return id(air_temp).state > 28.0;
+    disabled_by_default: false
+switch:
+  - platform: template
+    name: Simulated Vent Fan
+    id: vent_fan
+    optimistic: true
+    disabled_by_default: false
+    restore_mode: ALWAYS_OFF
+    assumed_state: false
+interval:
+  - interval: 5s
+    then:
+      - if:
+          condition:
+            sensor.in_range:
+              id: air_temp
+              above: 30.0
+          then:
+            - switch.turn_on:
+                id: vent_fan
+          else:
+            - switch.turn_off:
+                id: vent_fan
+    startup_delay: 0s
+
+INFO Configuration is valid!

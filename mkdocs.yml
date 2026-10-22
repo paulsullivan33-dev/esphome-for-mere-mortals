@@ -1,0 +1,25 @@
+site_name: ESPHome for Mere Mortals
+site_description: Plain-language firmware for ESP32 and ESP8266 boards, written as one YAML file. Sensors and switches, Wi-Fi and secrets, over-the-air updates, the native API and Home Assistant, and an honest account of what a bench with no hardware could prove.
+site_url: https://paulsullivan33-dev.github.io/esphome-for-mere-mortals/
+
+# Guides live at the repo root (nice for GitHub browsing).
+# The deploy workflow copies them into docs/ before building.
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - What ESPHome Is: what-esphome-is.md
+  - The Hardware: the-hardware.md
+  - Anatomy of a Configuration: anatomy-of-a-configuration.md
+  - Your First Device: your-first-device.md
+  - Sensors and Switches: sensors-and-switches.md
+  - Wi-Fi and Secrets: wifi-and-secrets.md
+  - Updates Over the Air: updates-over-the-air.md
+  - The Native API and Home Assistant: the-native-api-and-home-assistant.md
+  - Logs and Debugging: logs-and-debugging.md
+  - Recipes: recipes.md
+  - Limits and Honest Edges: limits-and-honest-edges.md
+  - Troubleshooting: troubleshooting.md
+  - Glossary: glossary.md
+  - Writing Criteria: criteria.md
