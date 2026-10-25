@@ -1,6 +1,7 @@
 site_name: ESPHome for Mere Mortals
 site_description: Plain-language firmware for ESP32 and ESP8266 boards, written as one YAML file. Sensors and switches, Wi-Fi and secrets, over-the-air updates, the native API and Home Assistant, and an honest account of what a bench with no hardware could prove.
 site_url: https://paulsullivan33-dev.github.io/esphome-for-mere-mortals/
+copyright: 'Part of <a href="https://paulsullivan33-dev.github.io/mere-mortals/">For Mere Mortals</a> · Text <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, code MIT'
 
 # Guides live at the repo root (nice for GitHub browsing).
 # The deploy workflow copies them into docs/ before building.

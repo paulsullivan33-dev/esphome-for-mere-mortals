@@ -129,3 +129,19 @@ behind every claim live in
 `esphome-lab/transcripts/` (t00–t11), and
 the lab's own notes are
 `examples/lab-notes.txt`.
+
+---
+
+## Part of the series
+
+This guide is one of the [For Mere Mortals](https://paulsullivan33-dev.github.io/mere-mortals/) guides: plain-language guides to the tools programmers and makers use.
+
+Related guides:
+
+- [Home Assistant for Mere Mortals](https://paulsullivan33-dev.github.io/home-assistant-for-mere-mortals/)
+- [MicroPython for Mere Mortals](https://paulsullivan33-dev.github.io/micropython-for-mere-mortals/)
+- [Arduino for Mere Mortals](https://paulsullivan33-dev.github.io/arduino-for-mere-mortals/)
+
+## License
+
+The writing in this guide is licensed under [CC BY 4.0](https://github.com/paulsullivan33-dev/esphome-for-mere-mortals/blob/main/LICENSE). Code examples and lab scripts are licensed under the [MIT License](https://github.com/paulsullivan33-dev/esphome-for-mere-mortals/blob/main/LICENSE-CODE).
